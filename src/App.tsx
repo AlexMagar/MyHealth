@@ -1,11 +1,15 @@
 
+import { useState } from 'react'
 import './App.css'
 import { Counter } from './components/layout/Counter.tsx'
 import { Footer } from './components/layout/Footer.tsx'
 import Header from './components/layout/Header.tsx'
 import { Section } from './components/layout/Section.tsx'
+import { List } from './components/layout/List.tsx'
 
 function App() {
+
+  const [count, setCount] = useState<number>(1)
 
   return (
     <>
@@ -16,7 +20,13 @@ function App() {
       This is my Section
     </Section>
     <hr/>
-    <Counter/>
+    <Counter setCount={setCount}>Count is {count}</Counter>
+    <hr/>
+    <List 
+      items={["string", 1223, "Boolean"]} 
+      render={(item:string | number) => <span className='gold'>{item}</span>} 
+    />
+    <hr/>
     <Footer/>
     </>
   )
