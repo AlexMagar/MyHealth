@@ -1,16 +1,18 @@
-import { useState } from 'react'
- 
-export const Counter = () => {
+import { ReactNode, useState } from 'react'
 
-    const [count, setCount] = useState<number>(1)
+type CounterProps = {
+  setCount: React.Dispatch<React.SetStateAction<number>>
+  children: ReactNode
+}
 
-    const handleOnClick = () => {
-      setCount( count +1 ) 
-    }
+export const Counter = ({children, setCount}: CounterProps) => {
 
+  const handleOnClick = () => {
+    setCount( count => count +4 )
+  }
   return (
     <>
-        <p>Your total count is {count}</p>
+        <p>This is {children}</p>
         <button onClick={handleOnClick}>+</button>
         <button onClick={() => setCount(prev => prev - 1)}>-</button>
     </>
