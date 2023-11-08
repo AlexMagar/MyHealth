@@ -1,10 +1,28 @@
-import { ReactElement } from 'react'
+import React, { ReactElement } from 'react'
 
 type headingProps = {title: string}
 
-const Header = ({title}:headingProps): ReactElement => {
+type PropsType = {
+  viewCart: boolean,
+  setViewCart: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const Header = ({viewCart, setViewCart} : PropsType) => {
+
+  const content = (
+    <header class 'header'>
+      <div className='header_title-bar'>
+        <h1>Mobile Co.</h1>
+        <div className='header_price-box'>
+          <p>Total item: </p>
+          <p>Total Price: </p>
+        </div>
+      </div>
+    </header>
+  )
+
   return (
-    <div>{title}</div>
+    <div>Header</div>
   )
 } 
 
