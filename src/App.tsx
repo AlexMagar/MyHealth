@@ -1,12 +1,10 @@
 
 import { useEffect, useState } from 'react'
 import './App.css'
-import { Counter } from './components/layout/Counter.tsx'
-import { Footer } from './components/layout/Footer.tsx'
-import Header from './components/layout/Header.tsx'
-import { Section } from './components/layout/Section.tsx'
-import { List } from './components/layout/List.tsx'
-import { Count } from './components/layout/Count.tsx'
+import { Cart } from './components/Cart'
+import { ProductList } from './components/ProductList'
+import Header from './components/layout/Header'
+import { Footer } from './components/layout/Footer'
 
 interface User {
   id: number,
@@ -15,18 +13,31 @@ interface User {
 
 function App() {
 
-  const [count, setCount] = useState<number>(1)
-  const [users, setUsers] = useState<User[] | null>(null)
+  // const [count, setCount] = useState<number>(1)
+  // const [users, setUsers] = useState<User[] | null>(null)
 
-  useEffect(() => {
-    console.log('mounting')
-    console.log('Users: ', users)
+  // useEffect(() => {
+  //   console.log('mounting')
+  //   console.log('Users: ', users)
 
-    return () => console.log('unmounting')
-  }, [users])
+  //   return () => console.log('unmounting')
+  // }, [users])
 
-  return (
+  const [viewCart, setViewCart] = useState<boolean>(false)
+
+  const pageContent = viewCart ? <Cart /> : <ProductList />
+
+  const content = (
     <>
+      <Header viewCart={viewCart} setViewCart = {setViewCart} />
+      {pageContent}
+      <Footer viewCart={viewCart} />
+    </>
+  )
+
+
+  return content
+{/*     
     <Header title={'Hello Heading'}/>
     <h1>My Health</h1>
     <hr/>
@@ -43,9 +54,8 @@ function App() {
     <hr/>
     <Count setCount={setCount}>Count {count}</Count>
     <hr/>
-    <Footer/>
-    </>
-  )
+    <Footer/> */}
+
 }
 
 export default App
