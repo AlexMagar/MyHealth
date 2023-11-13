@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react'
 import useCart from '../hooks/useCart'
 import { useProducts } from '../hooks/useProducts'
+import Product from './layout/Product'
 
 export const ProductList = () => {
 
@@ -10,18 +11,18 @@ export const ProductList = () => {
 
   let pageContent: ReactElement | ReactElement[] = <p>Loading...</p>
 
-
   if(products?.length){
     pageContent = products.map(product => {
-      const inCart: boolean = cart.some(item => item.sku === products.sku)
+      const inCart: boolean = cart.some(item => item.sku === product.sku)
       return (
         <Product 
-            key={products.sku} 
-            products={products} 
+            key={product.sku} 
+            product={product} 
             dispatch={dispatch}
             REDUCER_ACTION={REDUCER_ACTION}
             inCart={inCart}
         />
+        
       )
 
     })
