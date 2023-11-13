@@ -14,7 +14,7 @@ export const CartLineItem = ({item, dispatch, REDUCER_ACTIONS}: PropsType) => {
 
     const lineTotal: number = (item.qty * item.price)
     const highestQty: number = 20 > item.qty ? 20  : item.qty
-    const optionValues: number[] = [...Array(higestQty).keys()].map(i => i +1)
+    const optionValues: number[] = [...Array(highestQty).keys()].map(i => i +1)
 
     const options: ReactElement[] = optionValues.map(val => {
         return <option key={`opt${val}`} value={val}>{val}</option>
