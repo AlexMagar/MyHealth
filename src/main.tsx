@@ -6,10 +6,10 @@ import { CartProvider } from './context/CartProvider.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ProductsProvider>
-      <CartProvider>
+    {/* <ProductsProvider> */}
+      {/* <CartProvider> */}
         <App />
-      </CartProvider>
-    </ProductsProvider>
+      {/* </CartProvider> */}
+    {/* </ProductsProvider> */}
   </React.StrictMode>,
 )
