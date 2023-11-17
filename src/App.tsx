@@ -3,8 +3,11 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import { Cart } from './components/Cart'
 import { ProductList } from './components/ProductList'
-import Header from './components/layout/Header'
+// import Header from './components/layout/Header'
 import { Footer } from './components/layout/Footer'
+import { Header } from './components/LayoutSection/Header'
+import { Login } from './components/pages/signIn-signup/Login'
+
 
 interface User {
   id: number,
@@ -29,9 +32,14 @@ function App() {
 
   const content = (
     <>
-      <Header viewCart={viewCart} setViewCart = {setViewCart} />
+      {/* <Header viewCart={viewCart} setViewCart = {setViewCart} />
       {pageContent}
-      <Footer viewCart={viewCart} />
+      <Footer viewCart={viewCart} /> */}
+
+      <Header />
+      <hr/>
+      <Login />
+
     </>
   )
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
