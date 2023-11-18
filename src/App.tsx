@@ -6,8 +6,7 @@ import { ProductList } from './components/ProductList'
 // import Header from './components/layout/Header'
 import { Footer } from './components/layout/Footer'
 import { Header } from './components/LayoutSection/Header'
-import { Login } from './components/pages/signIn-signup/Login'
-
+import Login from './components/pages/signIn-signup/Login'
 
 interface User {
   id: number,
