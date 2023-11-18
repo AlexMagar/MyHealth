@@ -1,15 +1,20 @@
-import { Button, TextField } from '@mui/material'
+import { Slider } from '@mui/material'
+import React from 'react'
 
+const Login = () => {
 
-export const Login = () => {
-
-    console.log("This is login page")
     const content = (
         <>
         <p>ID: </p>
-        <TextField id='basic' type='text' variant='outlined' placeholder='ID'/>
-        <Button>Click Me</Button>
+        <form>
+          <input type="text" name="name"/>
+          <button>Click me</button>
+        </form>
+        <Slider defaultValue={30} />
+        <Slider defaultValue={30} className='slider'/>
         </>
     )
   return content
 }
+
+export default Login
